@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
-function App() {
+const App = () => {
+  const [display, setDisplay] = useState([
+    { id: 1, clicked: "" },
+    { id: 2, clicked: "" },
+    { id: 3, clicked: "" },
+    { id: 4, clicked: "" },
+    { id: 5, clicked: "" },
+    { id: 6, clicked: "" },
+  ]);
+
+  const random = () => {
+    let dummy = [...display];
+    shuffle(dummy);
+    setDisplay(dummy);
+    console.log(display);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {display.map((index, key) => (
+        <button key={key} onClick={random}>
+          {index.id}
+        </button>
+      ))}
     </div>
   );
-}
+};
 
 export default App;

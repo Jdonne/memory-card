@@ -1,3 +1,8 @@
+## Memory Card Game
+
+The Goal of the game is to click on all the images without clicking the same image twice\
+Application is hosted and can be visited at https://jdonne.github.io/memory-card/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

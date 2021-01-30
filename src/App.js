@@ -46,7 +46,6 @@ const App = () => {
     let dummy = [...display];
     shuffle(dummy);
     setDisplay(dummy);
-    console.log(display);
   };
 
   const handleClick = (e) => {
@@ -59,7 +58,6 @@ const App = () => {
       handleRandom();
       setScore(score + 1);
     } else if (found.clicked === "clicked") {
-      console.log("highscore " + highScore);
       setScore(0);
       let dummy2 = [
         { id: 1, clicked: "", img: logo1 },
@@ -79,8 +77,6 @@ const App = () => {
       console.log(dummy2);
       setDisplay(dummy2);
       setOver("");
-      console.log(display);
-      console.log("game over");
     }
   };
   const handleOver = () => {
